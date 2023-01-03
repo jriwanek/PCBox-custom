@@ -193,7 +193,7 @@ main(int argc, char *argv[])
     ProgSettings::loadTranslators(&app);
 #ifdef Q_OS_WINDOWS
     QApplication::setFont(QFont(ProgSettings::getFontName(lang_id), 9));
-    SetCurrentProcessExplicitAppUserModelID(L"PCBox.PCBox");
+    SetCurrentProcessExplicitAppUserModelID(L"86Box.86Box");
 #endif
 
 #ifndef Q_OS_MACOS
@@ -208,13 +208,13 @@ main(int argc, char *argv[])
 #    endif
 
 #    ifdef Q_OS_UNIX
-    app.setDesktopFileName("net.pcbox.PCBox");
+    app.setDesktopFileName("net.86box.86Box");
 #    endif
 #endif
 
     if (!pc_init_modules()) {
         QMessageBox fatalbox(QMessageBox::Icon::Critical, QObject::tr("No ROMs found"),
-                             QObject::tr("PCBox could not find any usable ROM images.\n\nPlease <a href=\"https://github.com/PCBox/roms/releases/latest\">download</a> a ROM set and extract it into the \"roms\" directory."),
+                             QObject::tr("86Box could not find any usable ROM images.\n\nPlease <a href=\"https://github.com/86Box/roms/releases/latest\">download</a> a ROM set and extract it into the \"roms\" directory."),
                              QMessageBox::Ok);
         fatalbox.setTextFormat(Qt::TextFormat::RichText);
         fatalbox.exec();
@@ -226,7 +226,7 @@ main(int argc, char *argv[])
         QMessageBox movewarnbox;
         movewarnbox.setIcon(QMessageBox::Icon::Warning);
         movewarnbox.setText(QObject::tr("This machine might have been moved or copied."));
-        movewarnbox.setInformativeText(QObject::tr("In order to ensure proper networking functionality, PCBox needs to know if this machine was moved or copied.\n\nSelect \"I Copied It\" if you are not sure."));
+        movewarnbox.setInformativeText(QObject::tr("In order to ensure proper networking functionality, 86Box needs to know if this machine was moved or copied.\n\nSelect \"I Copied It\" if you are not sure."));
         const QPushButton *movedButton  = movewarnbox.addButton(QObject::tr("I Moved It"), QMessageBox::AcceptRole);
         const QPushButton *copiedButton = movewarnbox.addButton(QObject::tr("I Copied It"), QMessageBox::DestructiveRole);
         QPushButton       *cancelButton = movewarnbox.addButton(QObject::tr("Cancel"), QMessageBox::RejectRole);
@@ -252,7 +252,7 @@ main(int argc, char *argv[])
 #    endif
     {
         QMessageBox warningbox(QMessageBox::Icon::Warning, QObject::tr("WinBox is no longer supported"),
-                               QObject::tr("Development of the WinBox manager stopped in 2022 due to a lack of maintainers. As we direct our efforts towards making PCBox even better, we have made the decision to no longer support WinBox as a manager.\n\nNo further updates will be provided through WinBox, and you may encounter incorrect behavior should you continue using it with newer versions of PCBox. Any bug reports related to WinBox behavior will be closed as invalid.\n\nGo to PCBox.net for a list of other managers you can use."),
+                               QObject::tr("Development of the WinBox manager stopped in 2022 due to a lack of maintainers. As we direct our efforts towards making 86Box even better, we have made the decision to no longer support WinBox as a manager.\n\nNo further updates will be provided through WinBox, and you may encounter incorrect behavior should you continue using it with newer versions of 86Box. Any bug reports related to WinBox behavior will be closed as invalid.\n\nGo to 86box.net for a list of other managers you can use."),
                                QMessageBox::NoButton);
         warningbox.addButton(QObject::tr("Continue"), QMessageBox::AcceptRole);
         warningbox.addButton(QObject::tr("Exit"), QMessageBox::RejectRole);
@@ -340,7 +340,7 @@ main(int argc, char *argv[])
 #endif
 
     UnixManagerSocket socket;
-    if (qgetenv("PCBOX_MANAGER_SOCKET").size()) {
+    if (qgetenv("86BOX_MANAGER_SOCKET").size()) {
         QObject::connect(&socket, &UnixManagerSocket::showsettings, main_window, &MainWindow::showSettings);
         QObject::connect(&socket, &UnixManagerSocket::pause, main_window, &MainWindow::togglePause);
         QObject::connect(&socket, &UnixManagerSocket::resetVM, main_window, &MainWindow::hardReset);
@@ -351,7 +351,7 @@ main(int argc, char *argv[])
         });
         QObject::connect(&socket, &UnixManagerSocket::ctrlaltdel, []() { pc_send_cad(); });
         main_window->installEventFilter(&socket);
-        socket.connectToServer(qgetenv("PCBOX_MANAGER_SOCKET"));
+        socket.connectToServer(qgetenv("86BOX_MANAGER_SOCKET"));
     }
 
     // pc_reset_hard_init();

@@ -688,10 +688,10 @@ plat_init_rom_paths(void)
 
     for (auto &path : paths) {
 #ifdef __APPLE__
-        rom_add_path(QDir(path).filePath("net.PCBox.PCBox/roms").toUtf8().constData());
-        rom_add_path(QDir(path).filePath("PCBox/roms").toUtf8().constData());
+        rom_add_path(QDir(path).filePath("net.86Box.86Box/roms").toUtf8().constData());
+        rom_add_path(QDir(path).filePath("86Box/roms").toUtf8().constData());
 #else
-        rom_add_path(QDir(path).filePath("PCBox/roms").toUtf8().constData());
+        rom_add_path(QDir(path).filePath("86Box/roms").toUtf8().constData());
 #endif
     }
 }

@@ -734,7 +734,7 @@ MainWindow::closeEvent(QCloseEvent *event)
     }
 
     if (confirm_exit && confirm_exit_cmdl && cpu_thread_run) {
-        QMessageBox questionbox(QMessageBox::Icon::Question, "PCBox", tr("Are you sure you want to exit PCBox?"), QMessageBox::Yes | QMessageBox::No, this);
+        QMessageBox questionbox(QMessageBox::Icon::Question, "86Box", tr("Are you sure you want to exit 86Box?"), QMessageBox::Yes | QMessageBox::No, this);
         auto chkbox = new QCheckBox(tr("Don't show this message again"));
         questionbox.setCheckBox(chkbox);
         chkbox->setChecked(!confirm_exit);
@@ -790,7 +790,7 @@ MainWindow::initRendererMonitorSlot(int monitor_index)
             this->renderers[monitor_index]->show();
         });
         secondaryRenderer->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint | Qt::WindowCloseButtonHint);
-        secondaryRenderer->setWindowTitle(QObject::tr("PCBox Monitor #") + QString::number(monitor_index + 1));
+        secondaryRenderer->setWindowTitle(QObject::tr("86Box Monitor #") + QString::number(monitor_index + 1));
 
         if (vid_resize == 2)
             secondaryRenderer->setFixedSize(fixed_size_x, fixed_size_y);
@@ -885,7 +885,7 @@ void
 MainWindow::on_actionHard_Reset_triggered()
 {
     if (confirm_reset) {
-        QMessageBox questionbox(QMessageBox::Icon::Question, "PCBox", tr("Are you sure you want to hard reset the emulated machine?"), QMessageBox::NoButton, this);
+        QMessageBox questionbox(QMessageBox::Icon::Question, "86Box", tr("Are you sure you want to hard reset the emulated machine?"), QMessageBox::NoButton, this);
         questionbox.addButton(tr("Reset"), QMessageBox::AcceptRole);
         questionbox.addButton(tr("Don't reset"), QMessageBox::RejectRole);
         const auto chkbox = new QCheckBox(tr("Don't show this message again"));
@@ -1721,9 +1721,9 @@ MainWindow::on_actionAbout_86Box_triggered()
 #    define DYNAREC_STR "no dynarec"
 #endif
     versioninfo.append(QString(" [%1, %2]").arg(QSysInfo::buildCpuArchitecture(), tr(DYNAREC_STR)));
-    msgBox.setText(QString("<b>%3%1%2</b>").arg(EMU_VERSION_FULL, versioninfo, tr("PCBox v")));
+    msgBox.setText(QString("<b>%3%1%2</b>").arg(EMU_VERSION_FULL, versioninfo, tr("86Box v")));
     msgBox.setInformativeText(tr("An emulator of old computers\n\nAuthors: Miran Grča (OBattler), RichardG867, Jasmine Iwanek, TC1995, coldbrewed, Teemu Korhonen (Manaatti), Joakim L. Gilje, Adrien Moulin (elyosh), Daniel Balsom (gloriouscow), Cacodemon345, Fred N. van Kempen (waltje), Tiseno100, reenigne, and others.\n\nWith previous core contributions from Sarah Walker, leilei, JohnElliott, greatpsycho, and others.\n\nReleased under the GNU General Public License version 2 or later. See LICENSE for more information."));
-    msgBox.setWindowTitle("About PCBox");
+    msgBox.setWindowTitle("About 86Box");
     msgBox.addButton("OK", QMessageBox::ButtonRole::AcceptRole);
     const auto webSiteButton = msgBox.addButton(EMU_SITE, QMessageBox::ButtonRole::HelpRole);
     webSiteButton->connect(webSiteButton, &QPushButton::released, []() {

@@ -37,15 +37,15 @@ body:
       required: true
   - type: input
     attributes:
-      label: PCBox version
-      description: What version of PCBox are you running? (Saying "Latest from Jenkins" is not helpful.)
+      label: 86Box version
+      description: What version of 86Box are you running? (Saying "Latest from Jenkins" is not helpful.)
       placeholder: e.g. v4.0 build 5000
     validations:
       required: true
   - type: dropdown
     attributes:
       label: Build architecture
-      description: PCBox for what architecture are you using?
+      description: 86Box for what architecture are you using?
       options: 
         - Linux - ARM (32-bit) 
         - Linux - ARM (64-bit) 
@@ -66,12 +66,12 @@ body:
   - type: dropdown
     attributes:
       label: Download source
-      description: Where did you download PCBox from?
+      description: Where did you download 86Box from?
       options:
         - Official website (Jenkins, GitHub)
         - Manager auto-update
-        - I built PCBox myself (please tell us more about your build configuration)
-        - I got PCBox from a third party repository (please tell us where)
+        - I built 86Box myself (please tell us more about your build configuration)
+        - I got 86Box from a third party repository (please tell us where)
     validations:
       required: true
   - type: textarea

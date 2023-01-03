@@ -18,4 +18,4 @@ add_library(fdd OBJECT fdd.c fdc.c fdc_magitronic.c fdc_monster.c fdc_pii15xb.c
     fdd_mfm.c fdd_td0.c)
 
 add_subdirectory(lzw)
-target_link_libraries(PCBox lzw)
+target_link_libraries(86Box lzw)

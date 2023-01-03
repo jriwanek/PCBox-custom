@@ -25,7 +25,7 @@ if(CYRIX_6X86)
     target_compile_definitions(cpu PRIVATE USE_CYRIX_6X86)
 
     add_library(ct686 OBJECT codegen_timing_686.c)
-    target_link_libraries(PCBox ct686)
+    target_link_libraries(86Box ct686)
 endif()
 
 if(DYNAREC)
@@ -38,4 +38,4 @@ if(DYNAREC)
 endif()
 
 add_subdirectory(softfloat3e)
-target_link_libraries(PCBox softfloat3e)
+target_link_libraries(86Box softfloat3e)

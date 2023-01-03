@@ -282,7 +282,7 @@ private:
         poolInfo.maxSets = 2;
 
         if ((res = m_devFuncs->vkCreateDescriptorPool(m_window->device(), &poolInfo, nullptr, &descPool)) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create descriptor pool. Switch to another renderer. " + Vulkan_GetResultString(res));
+            QMessageBox::critical(main_window, "86Box", "Could not create descriptor pool. Switch to another renderer. " + Vulkan_GetResultString(res));
             return;
         }
 
@@ -293,7 +293,7 @@ private:
         allocInfo.pSetLayouts = &descLayout;
 
         if ((res = m_devFuncs->vkAllocateDescriptorSets(m_window->device(), &allocInfo, &descSet)) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create descriptor set. Switch to another renderer. " + Vulkan_GetResultString(res));
+            QMessageBox::critical(main_window, "86Box", "Could not create descriptor set. Switch to another renderer. " + Vulkan_GetResultString(res));
             return;
         }}
         VkDescriptorImageInfo imageDescInfo{};
@@ -329,7 +329,7 @@ public:
         funcs.vkGetDeviceProcAddr = (PFN_vkGetDeviceProcAddr)m_window->vulkanInstance()->getInstanceProcAddr("vkGetDeviceProcAddr");
         info.pVulkanFunctions = &funcs;
         if (vmaCreateAllocator(&info, &allocator) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create Vulkan allocator. Switch to another renderer");
+            QMessageBox::critical(main_window, "86Box", "Could not create Vulkan allocator. Switch to another renderer");
             return;
         }
 
@@ -357,7 +357,7 @@ public:
             VMA_ALLOCATION_CREATE_MAPPED_BIT;
 
         if ((res = vmaCreateImage(allocator, &imageInfo, &allocInfo, &image, &allocation, &allocatedInfo)) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create Vulkan image. Switch to another renderer. " + Vulkan_GetResultString(res));
+            QMessageBox::critical(main_window, "86Box", "Could not create Vulkan image. Switch to another renderer. " + Vulkan_GetResultString(res));
             return;
         };
 
@@ -377,7 +377,7 @@ public:
         imageViewInfo.components.a = VK_COMPONENT_SWIZZLE_A;
 
         if ((res = m_devFuncs->vkCreateImageView(m_window->device(), &imageViewInfo, nullptr, &imageView)) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create Vulkan image view. Switch to another renderer. " + Vulkan_GetResultString(res));
+            QMessageBox::critical(main_window, "86Box", "Could not create Vulkan image view. Switch to another renderer. " + Vulkan_GetResultString(res));
             return;
         }
 
@@ -482,7 +482,7 @@ public:
             layoutInfo.pBindings = &samplerLayoutBinding;
 
             if ((res = m_devFuncs->vkCreateDescriptorSetLayout(m_window->device(), &layoutInfo, nullptr, &descLayout))) {
-                QMessageBox::critical(main_window, "PCBox", "Could not create descriptor set layout. Switch to another renderer. " + Vulkan_GetResultString(res));
+                QMessageBox::critical(main_window, "86Box", "Could not create descriptor set layout. Switch to another renderer. " + Vulkan_GetResultString(res));
                 return;
             }
             // Sampler binding end.
@@ -495,7 +495,7 @@ public:
             pipelineLayoutInfo.pPushConstantRanges = &range;
 
             if ((res = m_devFuncs->vkCreatePipelineLayout(m_window->device(), &pipelineLayoutInfo, nullptr, &pipelineLayout)) != VK_SUCCESS) {
-                QMessageBox::critical(main_window, "PCBox", "Could not create pipeline layout. Switch to another renderer. " + Vulkan_GetResultString(res));
+                QMessageBox::critical(main_window, "86Box", "Could not create pipeline layout. Switch to another renderer. " + Vulkan_GetResultString(res));
                 return;
             }
 
@@ -506,14 +506,14 @@ public:
             createInfo.pCode = (uint32_t*)vertShaderCode;
             VkShaderModule vertModule{nullptr}, fragModule{nullptr};
             if ((res = m_devFuncs->vkCreateShaderModule(m_window->device(), &createInfo, nullptr, &vertModule)) != VK_SUCCESS) {
-                QMessageBox::critical(main_window, "PCBox", "Could not create vertex shader. Switch to another renderer. " + Vulkan_GetResultString(res));
+                QMessageBox::critical(main_window, "86Box", "Could not create vertex shader. Switch to another renderer. " + Vulkan_GetResultString(res));
                 return;
             }
 
             createInfo.codeSize = sizeof(fragShaderCode);
             createInfo.pCode = (uint32_t*)fragShaderCode;
             if ((res = m_devFuncs->vkCreateShaderModule(m_window->device(), &createInfo, nullptr, &fragModule)) != VK_SUCCESS) {
-                QMessageBox::critical(main_window, "PCBox", "Could not create fragment shader. Switch to another renderer. " + Vulkan_GetResultString(res));
+                QMessageBox::critical(main_window, "86Box", "Could not create fragment shader. Switch to another renderer. " + Vulkan_GetResultString(res));
                 return;
             }
 
@@ -559,7 +559,7 @@ public:
             if ((res = m_devFuncs->vkCreateGraphicsPipelines(m_window->device(), VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &pipeline)) != VK_SUCCESS) {
                 m_devFuncs->vkDestroyShaderModule(m_window->device(), vertModule, nullptr);
                 m_devFuncs->vkDestroyShaderModule(m_window->device(), fragModule, nullptr);
-                QMessageBox::critical(main_window, "PCBox", "Could not create graphics pipeline. Switch to another renderer. " + Vulkan_GetResultString(res));
+                QMessageBox::critical(main_window, "86Box", "Could not create graphics pipeline. Switch to another renderer. " + Vulkan_GetResultString(res));
                 return;
             }
             m_devFuncs->vkDestroyShaderModule(m_window->device(), vertModule, nullptr);
@@ -583,7 +583,7 @@ public:
         samplerInfo.maxLod = 0.0;
 
         if ((res = m_devFuncs->vkCreateSampler(m_window->device(), &samplerInfo, nullptr, &sampler)) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create linear image sampler. Switch to another renderer. " + Vulkan_GetResultString(res));
+            QMessageBox::critical(main_window, "86Box", "Could not create linear image sampler. Switch to another renderer. " + Vulkan_GetResultString(res));
             return;
         }
 
@@ -591,7 +591,7 @@ public:
         samplerInfo.mipmapMode = VK_SAMPLER_MIPMAP_MODE_NEAREST;
 
         if ((res = m_devFuncs->vkCreateSampler(m_window->device(), &samplerInfo, nullptr, &nearestSampler)) != VK_SUCCESS) {
-            QMessageBox::critical(main_window, "PCBox", "Could not create nearest image sampler. Switch to another renderer. " + Vulkan_GetResultString(res));
+            QMessageBox::critical(main_window, "86Box", "Could not create nearest image sampler. Switch to another renderer. " + Vulkan_GetResultString(res));
             return;
         }
 

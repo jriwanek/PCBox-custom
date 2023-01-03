@@ -243,8 +243,8 @@ msgstr "&Помощь"
 msgid "&Documentation..."
 msgstr "&Документация..."
 
-msgid "&About PCBox..."
-msgstr "&О программе PCBox..."
+msgid "&About 86Box..."
+msgstr "&О программе 86Box..."
 
 msgid "&New image..."
 msgstr "&Новый образ..."
@@ -711,11 +711,11 @@ msgstr "Устройство ISABugger"
 msgid "POST card"
 msgstr "Карта POST"
 
-msgid "PCBox Unit Tester"
-msgstr "Модульный Тестер PCBox"
+msgid "86Box Unit Tester"
+msgstr "Модульный Тестер 86Box"
 
-msgid "PCBox"
-msgstr "PCBox"
+msgid "86Box"
+msgstr "86Box"
 
 msgid "Error"
 msgstr "Ошибка"
@@ -738,8 +738,8 @@ msgstr "ZIP %03i %i (%s): %ls"
 msgid "ZIP images"
 msgstr "Образы ZIP"
 
-msgid "PCBox could not find any usable ROM images.\n\nPlease <a href=\"https://github.com/PCBox/roms/releases/latest\">download</a> a ROM set and extract it into the \"roms\" directory."
-msgstr "PCBox не смог найти ни одного подходящего для использования файла с ПЗУ.\n\nПожалуйста <a href=\"https://github.com/PCBox/roms/releases/latest\">скачайте</a> набор ПЗУ и извлеките его в каталог \"roms\"."
+msgid "86Box could not find any usable ROM images.\n\nPlease <a href=\"https://github.com/86Box/roms/releases/latest\">download</a> a ROM set and extract it into the \"roms\" directory."
+msgstr "86Box не смог найти ни одного подходящего для использования файла с ПЗУ.\n\nПожалуйста <a href=\"https://github.com/86Box/roms/releases/latest\">скачайте</a> набор ПЗУ и извлеките его в каталог \"roms\"."
 
 msgid "(empty)"
 msgstr "(пусто)"
@@ -894,8 +894,8 @@ msgstr "Образы Flux"
 msgid "Are you sure you want to hard reset the emulated machine?"
 msgstr "Вы уверены, что хотите выполнить холодную перезагрузку эмулируемой машины?"
 
-msgid "Are you sure you want to exit PCBox?"
-msgstr "Вы уверены, что хотите выйти из PCBox?"
+msgid "Are you sure you want to exit 86Box?"
+msgstr "Вы уверены, что хотите выйти из 86Box?"
 
 msgid "Unable to initialize Ghostscript"
 msgstr "Невозможно инициализировать Ghostscript"
@@ -906,8 +906,8 @@ msgstr "Магнитооптический %i (%ls): %ls"
 msgid "MO images"
 msgstr "Образы магнитооптических дисков"
 
-msgid "Welcome to PCBox!"
-msgstr "Добро пожаловать в PCBox!"
+msgid "Welcome to 86Box!"
+msgstr "Добро пожаловать в 86Box!"
 
 msgid "Internal controller"
 msgstr "Встроенный контроллер"
@@ -927,11 +927,11 @@ msgstr "Это приведёт к холодной перезагрузке э�
 msgid "Save"
 msgstr "Сохранить"
 
-msgid "About PCBox"
-msgstr "О PCBox"
+msgid "About 86Box"
+msgstr "О 86Box"
 
-msgid "PCBox v"
-msgstr "PCBox v"
+msgid "86Box v"
+msgstr "86Box v"
 
 msgid "An emulator of old computers\n\nAuthors: Miran Grča (OBattler), RichardG867, Jasmine Iwanek, TC1995, coldbrewed, Teemu Korhonen (Manaatti), Joakim L. Gilje, Adrien Moulin (elyosh), Daniel Balsom (gloriouscow), Cacodemon345, Fred N. van Kempen (waltje), Tiseno100, reenigne, and others.\n\nWith previous core contributions from Sarah Walker, leilei, JohnElliott, greatpsycho, and others.\n\nReleased under the GNU General Public License version 2 or later. See LICENSE for more information."
 msgstr "Эмулятор старых компьютеров\n\nАвторы: Miran Grča (OBattler), RichardG867, Jasmine Iwanek, TC1995, coldbrewed, Teemu Korhonen (Manaatti), Joakim L. Gilje, Adrien Moulin (elyosh), Daniel Balsom (gloriouscow), Cacodemon345, Fred N. van Kempen (waltje), Tiseno100, reenigne, and others.\n\nWith previous core contributions from Sarah Walker, leilei, JohnElliott, greatpsycho, and others.\n\nВыпускается под лицензией GNU General Public License версии 2 или более поздней. Дополнительную информацию см. в файле LICENSE."
@@ -1263,5 +1263,5 @@ msgstr "&Автопауза при потере фокуса"
 msgid "WinBox is no longer supported"
 msgstr "WinBox больше не поддерживается"
 
-msgid "Development of the WinBox manager stopped in 2022 due to a lack of maintainers. As we direct our efforts towards making PCBox even better, we have made the decision to no longer support WinBox as a manager.\n\nNo further updates will be provided through WinBox, and you may encounter incorrect behavior should you continue using it with newer versions of PCBox. Any bug reports related to WinBox behavior will be closed as invalid.\n\nGo to PCBox.net for a list of other managers you can use."
-msgstr "Разработка менеджера WinBox прекратилась в 2022 году из-за отсутствия сопровождающих. Поскольку мы направляем наши усилия на то, чтобы сделать PCBox еще лучше, мы приняли решение больше не поддерживать WinBox в качестве менеджера.\n\nWinBox больше не будет обновляться, и вы можете столкнуться с некорректным поведением, если продолжите использовать его с новыми версиями PCBox. Любые сообщения об ошибках, связанных с поведением WinBox, будут закрыты как недействительные.\n\nПерейдите на сайт PCBox.net для получения списка других менеджеров, которые вы можете использовать."
+msgid "Development of the WinBox manager stopped in 2022 due to a lack of maintainers. As we direct our efforts towards making 86Box even better, we have made the decision to no longer support WinBox as a manager.\n\nNo further updates will be provided through WinBox, and you may encounter incorrect behavior should you continue using it with newer versions of 86Box. Any bug reports related to WinBox behavior will be closed as invalid.\n\nGo to 86box.net for a list of other managers you can use."
+msgstr "Разработка менеджера WinBox прекратилась в 2022 году из-за отсутствия сопровождающих. Поскольку мы направляем наши усилия на то, чтобы сделать 86Box еще лучше, мы приняли решение больше не поддерживать WinBox в качестве менеджера.\n\nWinBox больше не будет обновляться, и вы можете столкнуться с некорректным поведением, если продолжите использовать его с новыми версиями 86Box. Любые сообщения об ошибках, связанных с поведением WinBox, будут закрыты как недействительные.\n\nПерейдите на сайт 86box.net для получения списка других менеджеров, которые вы можете использовать."

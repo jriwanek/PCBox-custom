@@ -29,7 +29,7 @@ add_library(dev OBJECT bugger.c cassette.c cartridge.c hasp.c hwm.c hwm_lm75.c h
     tco.c)
 
 if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-    target_link_libraries(PCBox atomic)
+    target_link_libraries(86Box atomic)
 endif()
 
 if(ISAMEM_RAMPAGE)

@@ -34,10 +34,10 @@ if(MUNT_EXTERNAL)
     list(APPEND VCPKG_MANIFEST_FEATURES "munt")
 endif()
 
-project(PCBox
+project(86Box
     VERSION 4.2.1
     DESCRIPTION "Emulator of x86-based systems"
-    HOMEPAGE_URL "https://pcbox-emu.xyz/"
+    HOMEPAGE_URL "https://86box.net"
     LANGUAGES C CXX)
 
 include(CPack)

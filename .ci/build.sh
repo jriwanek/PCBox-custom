@@ -127,7 +127,7 @@ save_buildtag() {
 }
 
 # Set common variables.
-project=PCBox
+project=86Box
 cwd=$(pwd)
 
 # Parse arguments.

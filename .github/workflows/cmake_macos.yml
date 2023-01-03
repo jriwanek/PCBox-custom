@@ -120,7 +120,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: 'PCBox${{ matrix.ui.slug }}${{ matrix.dynarec.slug }}${{ matrix.build.slug }}-macOS-x86_64-gha${{ github.run_number }}'
+          name: '86Box${{ matrix.ui.slug }}${{ matrix.dynarec.slug }}${{ matrix.build.slug }}-macOS-x86_64-gha${{ github.run_number }}'
           path: build/artifacts/**
 
   macos14-arm64:
@@ -219,5 +219,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: 'PCBox${{ matrix.ui.slug }}${{ matrix.dynarec.slug }}${{ matrix.build.slug }}-macOS-arm64-gha${{ github.run_number }}'
+          name: '86Box${{ matrix.ui.slug }}${{ matrix.dynarec.slug }}${{ matrix.build.slug }}-macOS-arm64-gha${{ github.run_number }}'
           path: build/artifacts/**

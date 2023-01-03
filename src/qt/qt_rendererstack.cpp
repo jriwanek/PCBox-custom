@@ -74,7 +74,7 @@ RendererStack::RendererStack(QWidget *parent, int monitor_index)
     m_monitor_index = monitor_index;
 #if defined __unix__ && !defined __HAIKU__
     char auto_mouse_type[16];
-    mousedata.mouse_type = getenv("EMUPCBOX_MOUSE");
+    mousedata.mouse_type = getenv("EMU86BOX_MOUSE");
     if (!mousedata.mouse_type || (mousedata.mouse_type[0] == '\0') || !stricmp(mousedata.mouse_type, "auto")) {
         if (QApplication::platformName().contains("wayland"))
             strcpy(auto_mouse_type, "wayland");
@@ -357,7 +357,7 @@ RendererStack::createRenderer(Renderer renderer)
                 try {
                     hw = new VulkanWindowRenderer(this);
                 } catch (std::runtime_error &e) {
-                    auto msgBox = new QMessageBox(QMessageBox::Critical, "PCBox", e.what() + QString("\nFalling back to software rendering."), QMessageBox::Ok);
+                    auto msgBox = new QMessageBox(QMessageBox::Critical, "86Box", e.what() + QString("\nFalling back to software rendering."), QMessageBox::Ok);
                     msgBox->setAttribute(Qt::WA_DeleteOnClose);
                     msgBox->show();
                     imagebufs = {};
@@ -375,7 +375,7 @@ RendererStack::createRenderer(Renderer renderer)
                 });
                 connect(hw, &VulkanWindowRenderer::errorInitializing, [=]() {
                     /* Renderer could not initialize, fallback to software. */
-                    auto msgBox = new QMessageBox(QMessageBox::Critical, "PCBox", QString("Failed to initialize Vulkan renderer.\nFalling back to software rendering."), QMessageBox::Ok);
+                    auto msgBox = new QMessageBox(QMessageBox::Critical, "86Box", QString("Failed to initialize Vulkan renderer.\nFalling back to software rendering."), QMessageBox::Ok);
                     msgBox->setAttribute(Qt::WA_DeleteOnClose);
                     msgBox->show();
                     imagebufs = {};
