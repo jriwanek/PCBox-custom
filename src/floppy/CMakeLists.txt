@@ -34,4 +34,4 @@ add_library(fdd OBJECT
 )
 
 add_subdirectory(lzw)
-target_link_libraries(PCBox lzw)
+target_link_libraries(86Box lzw)

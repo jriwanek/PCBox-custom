@@ -30,16 +30,16 @@ endif()
 
 set(THREADS_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
-target_link_libraries(PCBox Threads::Threads)
+target_link_libraries(86Box Threads::Threads)
 
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
 if(STATIC_BUILD AND TARGET SDL2::SDL2-static)
-    target_link_libraries(PCBox SDL2::SDL2-static)
+    target_link_libraries(86Box SDL2::SDL2-static)
 elseif(TARGET SDL2::SDL2)
-    target_link_libraries(PCBox SDL2::SDL2)
+    target_link_libraries(86Box SDL2::SDL2)
 else()
-    target_link_libraries(PCBox ${SDL2_LIBRARIES})
+    target_link_libraries(86Box ${SDL2_LIBRARIES})
 endif()
 
 add_library(ui OBJECT

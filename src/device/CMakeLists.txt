@@ -70,7 +70,7 @@ add_library(dev OBJECT
 )
 
 if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT MSVC)
-    target_link_libraries(PCBox atomic)
+    target_link_libraries(86Box atomic)
 endif()
 
 if(ISAMEM_RAMPAGE)

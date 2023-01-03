@@ -24,7 +24,7 @@ if(APPLE)
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 endif()
 
-add_executable(PCBox
+add_executable(86Box
     86box.c
     config.c
     timer.c
@@ -55,12 +55,12 @@ if(CMAKE_SYSTEM_NAME MATCHES "Linux")
 endif()
 
 if(CPPTHREADS)
-    target_sources(PCBox PRIVATE thread.cpp)
+    target_sources(86Box PRIVATE thread.cpp)
 endif()
 
 if(GDBSTUB)
     add_compile_definitions(USE_GDBSTUB)
-    target_sources(PCBox PRIVATE gdbstub.c)
+    target_sources(86Box PRIVATE gdbstub.c)
 endif()
 
 if(NEW_DYNAREC)
@@ -77,7 +77,7 @@ endif()
 
 if(DISCORD)
     add_compile_definitions(DISCORD)
-    target_sources(PCBox PRIVATE discord.c)
+    target_sources(86Box PRIVATE discord.c)
 endif()
 
 if(DEBUGREGS486)
@@ -92,9 +92,9 @@ if(VNC)
             vnc.c
             vnc_keymap.c
         )
-        target_link_libraries(PCBox vnc LibVNCServer::vncserver)
+        target_link_libraries(86Box vnc LibVNCServer::vncserver)
         if(WIN32)
-            target_link_libraries(PCBox ws2_32)
+            target_link_libraries(86Box ws2_32)
         endif()
     endif()
 endif()
@@ -103,24 +103,24 @@ if(INSTRUMENT)
     add_compile_definitions(USE_INSTRUMENT)
 endif()
 
-target_link_libraries(PCBox cpu chipset mch dev mem fdd game cdrom rdisk mo hdd
+target_link_libraries(86Box cpu chipset mch dev mem fdd game cdrom rdisk mo hdd
     net print scsi sio snd utils vid voodoo plat ui)
 
 if(HAIKU)
-    target_link_libraries(PCBox be)
+    target_link_libraries(86Box be)
 endif()
 
 if(WIN32 AND ARCH STREQUAL "i386")
     if(MINGW)
-        target_link_options(PCBox PRIVATE "LINKER:--large-address-aware")
+        target_link_options(86Box PRIVATE "LINKER:--large-address-aware")
     else()
-        target_link_options(PCBox PRIVATE "LINKER:/LARGEADDRESSAWARE")
+        target_link_options(86Box PRIVATE "LINKER:/LARGEADDRESSAWARE")
     endif()
 endif()
 
 if(STATIC_BUILD)
     if(MINGW OR UNIX)
-        target_link_options(PCBox PRIVATE "-static")
+        target_link_options(86Box PRIVATE "-static")
         set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
     endif()
 endif()
@@ -150,12 +150,12 @@ endif()
 if(APPLE)
     # Freetype is dynamically loaded by the emulator, however, we link it
     # on macOS so it gets copied to the bundle by the installation process
-    target_link_libraries(PCBox Freetype::Freetype)
+    target_link_libraries(86Box Freetype::Freetype)
 endif()
 
 find_package(PNG REQUIRED)
 include_directories(${PNG_INCLUDE_DIRS})
-target_link_libraries(PCBox PNG::PNG)
+target_link_libraries(86Box PNG::PNG)
 
 configure_file(include/86box/version.h.in include/86box/version.h @ONLY)
 include_directories(${CMAKE_CURRENT_BINARY_DIR}/include)
@@ -182,21 +182,21 @@ endif()
 if(MINITRACE)
     add_compile_definitions(MTR_ENABLED)
     add_library(minitrace OBJECT minitrace/minitrace.c)
-    target_link_libraries(PCBox minitrace)
+    target_link_libraries(86Box minitrace)
 endif()
 
 if(WIN32 OR (APPLE AND CMAKE_MACOSX_BUNDLE))
     # Copy the binary to the root of the install prefix on Windows and macOS
-    install(TARGETS PCBox DESTINATION ".")
+    install(TARGETS 86Box DESTINATION ".")
 else()
     # On Linux we want to copy the binary to the `bin` folder.
-    install(TARGETS PCBox)
+    install(TARGETS 86Box)
 endif()
 
 
 # Install our dependencies if using vcpkg
 if(VCPKG_TOOLCHAIN)
-    x_vcpkg_install_local_dependencies(TARGETS PCBox DESTINATION ".")
+    x_vcpkg_install_local_dependencies(TARGETS 86Box DESTINATION ".")
 endif()
 
 
@@ -205,20 +205,20 @@ if(WIN32)
     install(CODE "
         include(BundleUtilities)
         get_filename_component(CMAKE_INSTALL_PREFIX_ABSOLUTE \${CMAKE_INSTALL_PREFIX} ABSOLUTE)
-        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX_ABSOLUTE}/$<TARGET_FILE_NAME:PCBox>\" \"\" \"\")"
+        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX_ABSOLUTE}/$<TARGET_FILE_NAME:86Box>\" \"\" \"\")"
     COMPONENT Runtime)
 elseif(APPLE AND NOT QT)
     install(CODE "
         include(BundleUtilities)
         get_filename_component(CMAKE_INSTALL_PREFIX_ABSOLUTE \${CMAKE_INSTALL_PREFIX} ABSOLUTE)
-        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX_ABSOLUTE}/PCBox.app\" \"\" \"\")"
+        fixup_bundle(\"\${CMAKE_INSTALL_PREFIX_ABSOLUTE}/86Box.app\" \"\" \"\")"
     COMPONENT Runtime)
 endif()
 
 # Install the PDB file on Windows builds
 if(MSVC)
     # CMake fully supports PDB files on MSVC-compatible compilers
-    install(FILES $<TARGET_PDB_FILE:PCBox>
+    install(FILES $<TARGET_PDB_FILE:86Box>
         CONFIGURATIONS Debug RelWithDebInfo
         DESTINATION ".")
 elseif(WIN32)
@@ -226,7 +226,7 @@ elseif(WIN32)
     # emit PDB files when targeting Windows, however, CMake only supports
     # the relevant properties with MSVC and clones. Try to install
     # the PDB file assuming it's in the same path as the EXE.
-    install(FILES "$<TARGET_FILE_DIR:PCBox>/$<TARGET_FILE_BASE_NAME:PCBox>.pdb"
+    install(FILES "$<TARGET_FILE_DIR:86Box>/$<TARGET_FILE_BASE_NAME:86Box>.pdb"
         CONFIGURATIONS Debug RelWithDebInfo
         DESTINATION "."
         OPTIONAL)
@@ -259,5 +259,5 @@ else()
 endif()
 
 if(CMAKE_SYSTEM_NAME MATCHES "NetBSD")
-    add_custom_command(TARGET PCBox POST_BUILD COMMAND paxctl ARGS +m $<TARGET_FILE:PCBox> COMMENT "Disable PaX MPROTECT")
+    add_custom_command(TARGET 86Box POST_BUILD COMMAND paxctl ARGS +m $<TARGET_FILE:86Box> COMMENT "Disable PaX MPROTECT")
 endif()

@@ -198,7 +198,7 @@ mac_notarize() {
 }
 
 # Set common variables.
-project=PCBox
+project=86Box
 cwd=$(pwd)
 
 # Parse arguments.

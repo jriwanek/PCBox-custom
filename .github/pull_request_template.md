@@ -7,7 +7,7 @@ Checklist
 * [ ] Closes #xxx
 * [ ] I have discussed this with core contributors already
 * [ ] This pull request requires changes to the ROM set
-  * [ ] I have opened a roms pull request - https://github.com/PCBox/roms/pull/changeme/
+  * [ ] I have opened a roms pull request - https://github.com/86Box/roms/pull/changeme/
 
 References
 ==========

@@ -225,8 +225,8 @@ msgstr "&Допомога"
 msgid "&Documentation..."
 msgstr "&Документація..."
 
-msgid "&About PCBox..."
-msgstr "&Про програму PCBox..."
+msgid "&About 86Box..."
+msgstr "&Про програму 86Box..."
 
 msgid "&New image..."
 msgstr "&Новий образ..."
@@ -687,8 +687,8 @@ msgstr "Пристрій ISABugger"
 msgid "POST card"
 msgstr "Карта POST"
 
-msgid "PCBox"
-msgstr "PCBox"
+msgid "86Box"
+msgstr "86Box"
 
 msgid "Error"
 msgstr "Помилка"
@@ -714,8 +714,8 @@ msgstr "Образи знімних дисків"
 msgid "Image %1"
 msgstr "Образ %1"
 
-msgid "PCBox could not find any usable ROM images.\n\nPlease <a href=\"https://github.com/PCBox/roms/releases/latest\">download</a> a ROM set and extract it into the \"roms\" directory."
-msgstr "PCBox не зміг знайти жодного відповідного для використання файлу з ПЗУ.\n\nБудь ласка <a href=\"https://github.com/PCBox/roms/releases/latest\">завантажте</a> набір ПЗУ і витягніть його в каталог \"roms\"."
+msgid "86Box could not find any usable ROM images.\n\nPlease <a href=\"https://github.com/86Box/roms/releases/latest\">download</a> a ROM set and extract it into the \"roms\" directory."
+msgstr "86Box не зміг знайти жодного відповідного для використання файлу з ПЗУ.\n\nБудь ласка <a href=\"https://github.com/86Box/roms/releases/latest\">завантажте</a> набір ПЗУ і витягніть його в каталог \"roms\"."
 
 msgid "(empty)"
 msgstr "(порожньо)"
@@ -927,8 +927,8 @@ msgstr "Образи Flux"
 msgid "Are you sure you want to hard reset the emulated machine?"
 msgstr "Ви впевнені, що хочете виконати холодне перезавантаження емульованої машини?"
 
-msgid "Are you sure you want to exit PCBox?"
-msgstr "Ви впевнені, що хочете вийти з PCBox?"
+msgid "Are you sure you want to exit 86Box?"
+msgstr "Ви впевнені, що хочете вийти з 86Box?"
 
 msgid "Unable to initialize Ghostscript"
 msgstr "Неможливо ініціалізувати Ghostscript"
@@ -945,8 +945,8 @@ msgstr "&Магнітооптичний %1 (%2): %3"
 msgid "MO images"
 msgstr "Образи магнітооптичних дисків"
 
-msgid "Welcome to PCBox!"
-msgstr "Ласкаво просимо в PCBox!"
+msgid "Welcome to 86Box!"
+msgstr "Ласкаво просимо в 86Box!"
 
 msgid "Internal device"
 msgstr "Вбудований пристрій"
@@ -975,11 +975,11 @@ msgstr "Це призведе до холодної перезагрузки е�
 msgid "Save"
 msgstr "Зберегти"
 
-msgid "About PCBox"
-msgstr "Про PCBox"
+msgid "About 86Box"
+msgstr "Про 86Box"
 
-msgid "PCBox v"
-msgstr "PCBox v"
+msgid "86Box v"
+msgstr "86Box v"
 
 msgid "An emulator of old computers\n\nAuthors: Miran Grča (OBattler), RichardG867, Jasmine Iwanek, TC1995, coldbrewed, Teemu Korhonen (Manaatti), Joakim L. Gilje, Adrien Moulin (elyosh), Daniel Balsom (gloriouscow), Cacodemon345, Fred N. van Kempen (waltje), Tiseno100, reenigne, and others.\n\nWith previous core contributions from Sarah Walker, leilei, JohnElliott, greatpsycho, and others.\n\nReleased under the GNU General Public License version 2 or later. See LICENSE for more information."
 msgstr "Емулятор старих комп'ютерів\n\nАвтори: Miran Grča (OBattler), RichardG867, Jasmine Iwanek, TC1995, coldbrewed, Teemu Korhonen (Manaatti), Joakim L. Gilje, Adrien Moulin (elyosh), Daniel Balsom (gloriouscow), Cacodemon345, Fred N. van Kempen (waltje), Tiseno100, reenigne, and others.\n\nЗ попередніми основними внесками Sarah Walker, leilei, JohnElliott, greatpsycho та інших.\n\nВипускаєтся під ліцензією GNU General Public License версії 2 або більше пізніше. Додадкову інформацію см. у файлі LICENSE."
@@ -1605,8 +1605,8 @@ msgstr "&Автопауза при втраті фокусу"
 msgid "WinBox is no longer supported"
 msgstr "WinBox більше не підтримується"
 
-msgid "Development of the WinBox manager stopped in 2022 due to a lack of maintainers. As we direct our efforts towards making PCBox even better, we have made the decision to no longer support WinBox as a manager.\n\nNo further updates will be provided through WinBox, and you may encounter incorrect behavior should you continue using it with newer versions of PCBox. Any bug reports related to WinBox behavior will be closed as invalid.\n\nGo to PCBox.net for a list of other managers you can use."
-msgstr "Розробку менеджера WinBox було припинено у 2022 році через брак супровідників. Оскільки ми спрямовуємо наші зусилля на те, щоб зробити PCBox ще кращим, ми прийняли рішення більше не підтримувати WinBox як менеджер.\n\nБільше ніяких оновлень не буде надаватися через WinBox, і ви можете зіткнутися з некоректною поведінкою, якщо продовжите використовувати його з новими версіями PCBox. Будь-які повідомлення про помилки, пов'язані з поведінкою WinBox, будуть закриті як недійсні.\n\nПерейдіть на PCBox.net для отримання списку інших менеджерів, які ви можете використовувати."
+msgid "Development of the WinBox manager stopped in 2022 due to a lack of maintainers. As we direct our efforts towards making 86Box even better, we have made the decision to no longer support WinBox as a manager.\n\nNo further updates will be provided through WinBox, and you may encounter incorrect behavior should you continue using it with newer versions of 86Box. Any bug reports related to WinBox behavior will be closed as invalid.\n\nGo to 86Box.net for a list of other managers you can use."
+msgstr "Розробку менеджера WinBox було припинено у 2022 році через брак супровідників. Оскільки ми спрямовуємо наші зусилля на те, щоб зробити 86Box ще кращим, ми прийняли рішення більше не підтримувати WinBox як менеджер.\n\nБільше ніяких оновлень не буде надаватися через WinBox, і ви можете зіткнутися з некоректною поведінкою, якщо продовжите використовувати його з новими версіями 86Box. Будь-які повідомлення про помилки, пов'язані з поведінкою WinBox, будуть закриті як недійсні.\n\nПерейдіть на 86Box.net для отримання списку інших менеджерів, які ви можете використовувати."
 
 msgid "Generate"
 msgstr "Згенерувати"
