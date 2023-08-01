@@ -159,7 +159,7 @@ pci_bridge_write(int func, int addr, uint8_t val, void *priv)
                 val &= 0x01;
             else if (dev->local == PCI_BRIDGE_INTEL_ICH2)
                 val &= 0x01;
-            else if (dev->local == AGP_BRIDGE_AMD_751)
+            else if (AGP_BRIDGE_AMD(dev->local))
                 val &= 0x01;
             else
                 val &= 0x03;
