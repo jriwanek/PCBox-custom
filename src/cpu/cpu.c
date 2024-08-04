@@ -4398,7 +4398,7 @@ pentium_invalid_rdmsr:
                     EAX = msr.evntsel[ECX - 0x186] & 0xffffffff;
                     EDX = msr.evntsel[ECX - 0x186] >> 32;
                     break;
-//#if 0
+#if 1
                 case 0x198:
                     EAX = msr.ecx198 & 0xffffffff;
                     EDX = msr.ecx198 >> 32;
@@ -4415,7 +4415,7 @@ pentium_invalid_rdmsr:
                     EAX = msr.ecx1a0 & 0xffffffff;
                     EDX = msr.ecx1a0 >> 32;
                     break;
-//#endif
+#endif
                 /* Unknown */
                 case 0x1d3:
                     break;
@@ -5439,7 +5439,7 @@ pentium_invalid_wrmsr:
                 case 0x187:
                     msr.evntsel[ECX - 0x186] = EAX | ((uint64_t) EDX << 32);
                     break;
-//#if 0
+#if 1
                 case 0x198:
                     msr.ecx198 = EAX | ((uint64_t) EDX << 32);
                     break;
@@ -5452,7 +5452,7 @@ pentium_invalid_wrmsr:
                 case 0x1a0:
                     msr.ecx1a0 = EAX | ((uint64_t) EDX << 32);
                     break;
-//#endif
+#endif
                 case 0x1d3:
                     break;
                 /* DEBUGCTLMSR - Debugging Control Register */
